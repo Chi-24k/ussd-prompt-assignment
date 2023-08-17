@@ -1,0 +1,134 @@
+<!-- By Chidimma -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBank USSD Prompt Assignment</title>
+</head>
+<body>
+  <script>
+    // Bank USSD Code Request
+    let ussdCode = prompt('Please enter UBank USSD Code');
+  
+    // If user enters wrong UBank code...sorry, no option for extra tries currently
+    if (ussdCode != 1234){
+      alert('Biko commot for here, we do not know you.');
+    }
+  
+    // If user enters correct code :)
+    else{
+      let name = prompt("Welcome to UBank USSD Code Services, please enter your name");
+      let codeOptions = prompt(`Hello ${name}! What would you like to do today?
+      1.Transfer
+      2. Airtime Recharge
+      3. Data Recharge`)
+  
+      // User selects the Transfer option
+        if (codeOptions == 1){
+          alert(`${name}, you have selected Transfer`)
+          let transferOptions = prompt(`Please choose an option: 
+          1.Transfer to UBank
+          2.Transfer to Other Banks`)
+  
+          // User selects transfer to UBank...I only created functionality for self-transfer currently, alot of tweaks to be made for better functionality
+            if (transferOptions == 1){
+              alert(`Thank you ${name} for blessing us with more money`)
+              let acctNumber = prompt("Please enter your account number: ")
+              alert(`This account belongs to ${name}`)
+              let transferDeposit = prompt(`How much do you wish to transfer?`)
+              alert(`You have successfully transferred ${transferDeposit} naira into ${name}'s account yay!`)
+            }
+  
+            if(transferOptions == 2){
+              let otherBankOptions = prompt(`Please select the bank to transfer to:
+              1. Standard Chartered Bank
+              2. Standbic IBTC Bank
+              3. Access Bank
+              4. UBA Bank
+              5. First Bank
+              6. Guaranty Trust Bank
+              7. Opay `)
+  
+              if (otherBankOptions == 1 || 2 || 3 || 4 || 5 || 6 || 7 ){
+                let acctName = prompt("Please enter account name ")
+                let acctNumber = prompt("Please enter account number ")
+                  // if(acctNumber !== typeof(Number)){
+                  //   alert("What is your problem exactly...")
+                  // }
+                    alert(`This account belongs to ${acctName}`)
+                    let transferDeposit = prompt(`How much do you wish to transfer?`)
+                    alert(`Congratulations ${name}! You have successfully transferred ${transferDeposit} naira into ${acctName}'s account yay!`)
+  
+              }
+            }
+        }
+  
+        if (codeOptions == 2){
+          alert(`${name}, you have selected Airtime Recharge`)
+          let networkOptions = prompt(`Please select your network provider:
+            1. MTN
+            2. Airtel
+            3. 9mobile
+            4. Glo`)
+  
+              if (networkOptions == 1 || 2 || 3 || 4){
+                let phoneNumber = prompt("Enter phone number ")
+                let rechargeCard = prompt("How much do you want to recharge? ")
+                alert(`Congratulations ${name}! Your airtime recharge of ${rechargeCard}naira to ${phoneNumber} was successful.`)
+              }
+              
+              //  if (networkOptions == 4){
+              //   let phoneNumber = prompt("Why Glo though...sha enter phone number ")
+              //   let rechargeCard = prompt("How much do you want to recharge? ")
+              //   alert(`Congratulations ${name}! Your airtime recharge of ${rechargeCard}naira to ${phoneNumber} was successful.`)
+              //   }
+        }
+  
+        if (codeOptions == 3){
+          alert(`${name}, you have selected Data Recharge`)
+          let networkOptions = prompt(`Please network provider:
+            1. MTN
+            2. Airtel
+            3. 9mobile
+            4. Glo`)
+  
+              if (networkOptions == 1 || 2 || 3 || 4){
+                let phoneNumber = prompt("Enter phone number ")
+                let rechargeCard = prompt("How much data do you want? ")
+                alert(`Congratulations ${name}! Your data recharge of ${rechargeCard}MB to ${phoneNumber} was successful.`)
+              }  
+        }
+  
+    }
+  
+  </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 04:25...17.08.2023...will continue this later. There are many other functionalities I'd love to add like strict adherence to data types like numbers and strings. And many more conditional statements containing funny msgs and number of tries too, but that'd all be a bit later. Idk why the 'typeof' I did started messing up. It was working very well earlier...phew, this is fun.
+
+
+
+...*this was within transferOptions 1 just before the second alert, I hope I understand later on lol.
+ User doesn't insert number input...no options for extra tries too lol. Will add better functionalities later like minimum transfer deposit and some praises for our agbas that transfer plenty schmoney
+            
+if(transferDeposit !== typeof(Number)){
+ alert("You are a part of this country's problems...")
+ } -->
